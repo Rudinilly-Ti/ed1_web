@@ -20,6 +20,7 @@ export const Content = styled.div`
     
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
 `;
 
@@ -28,6 +29,7 @@ export const InputGroup = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items:flex-start;
+    justify-content: center;
     
     label {
         width: 100%;

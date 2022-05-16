@@ -5,11 +5,24 @@ const GlobalStyle = createGlobalStyle`
 
     * {
         margin: 0 auto;
-        padding: 0%;
+        padding: 0;
     }
 
     html body {
         font-family: Roboto, sans-serif;
+        scroll-behavior: smooth;
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #04C35C;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #eee;
+            border-radius: 10px;
+        }
     }
 
     input {
@@ -19,6 +32,8 @@ const GlobalStyle = createGlobalStyle`
     h1, h2, h3, h4, h5 {
         font-weight: 700;
     }
+
+
 `;
 
 export default GlobalStyle;

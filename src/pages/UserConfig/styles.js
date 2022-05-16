@@ -1,28 +1,13 @@
 import styled from 'styled-components';
-import main from '../../assets/main.png';
 
 export const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
-
     display: flex;
-`;
+    flex-direction: column;
 
-export const ImgBackground = styled.div`
-    flex: 1;
-    background: url(${main}) no-repeat center;
-    background-size:cover;
-`;
+    width: 400px;
+    margin-top: 30px;
 
-export const Content = styled.div`
-    width: 900px;
-    padding: 10px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
 `;
-
 export const InputGroup = styled.div`
     width: 100%;
     display: flex;
@@ -45,7 +30,7 @@ export const InputGroup = styled.div`
         padding: 10px;
     }
 
+    :first-of-type {
     margin-bottom: 10px;
+    }
 `;
-
-
