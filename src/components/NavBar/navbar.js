@@ -42,7 +42,7 @@ function NavBar() {
             <Nav.Link onClick={navigateNewNotes}>Nova Anotação</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <NavDropdown title={<span style={{ color: '#fff' }} className="my-auto">{user.email}</span>} id="navbarScrollingDropdown">
+        <NavDropdown title={<span style={{ color: '#fff' }} className="my-auto">{user.data.email}</span>} id="navbarScrollingDropdown">
           <NavDropdown.Item onClick={navigateConfig}>Configurações</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item onClick={handleLogOut}>

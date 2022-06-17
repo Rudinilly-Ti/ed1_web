@@ -15,7 +15,7 @@ export const ImgBackground = styled.div`
 `;
 
 export const Content = styled.div`
-    width: 900px;
+    width: 1100px;
     padding: 10px;
     
     display: flex;

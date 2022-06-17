@@ -3,7 +3,7 @@ import main from '../../assets/main.png';
 
 
 export const Container = styled.div`
-    width: 500px;
+    width: 400px;
     height: auto;
     display: flex;
 
@@ -27,7 +27,7 @@ export const Img = styled.div`
 `;
 
 export const Content = styled.div`
-    width: 350px;
+    width: 300px;
 
     margin: 20px 15px ;
 

@@ -2,21 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
+    justify-content: center;
+    align-content: stretch;
     flex-wrap: wrap;
-    padding-bottom: 15px;
-`;
-
-export const Divider = styled.div`
-    margin-top: 20px;
-
-    h3 {
-        width: 500px;
-    }
-
-    width: 550px;
-    height: auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 0px 30px 15px 30px;
 `;

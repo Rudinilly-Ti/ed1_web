@@ -1,4 +1,5 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
+import api from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from 'react-bootstrap';
@@ -7,10 +8,22 @@ import { Container, Content, InputGroup, ImgBackground } from './styles';
 
 function SingUp() {
     const navigate = useNavigate();
+    const [user, setUser] = useState({
+        nome: '',
+        email: '',
+        senha: ''
+    });
+    const handleSingUp = useCallback(async (e) => {
+        e.preventDefault()
+        try {
+            const response = await api.post('/usuarios', user)
 
-    const handleSingUp = useCallback(() => {
-        navigate("/");
-    }, [navigate])
+            navigate("/");
+        } catch (error) {
+            alert(error.response.data)
+        }
+
+    }, [navigate, user])
 
     return (
         <Container>
@@ -20,15 +33,15 @@ function SingUp() {
                     <h4>FAÇA SEU CADASTRO:</h4>
                     <InputGroup>
                         <label>Usuário:</label>
-                        <input type="text" />
+                        <input name='email' type="email" onChange={(e) => setUser({ ...user, email: e.target.value })} />
                     </InputGroup>
                     <InputGroup>
                         <label>Nome:</label>
-                        <input type="password" />
+                        <input name='nome' type="text" onChange={(e) => setUser({ ...user, nome: e.target.value })} />
                     </InputGroup>
                     <InputGroup>
                         <label>Senha:</label>
-                        <input type="password" />
+                        <input name='senha' autoComplete='nova-senha' type="password" onChange={(e) => setUser({ ...user, senha: e.target.value })} />
                     </InputGroup>
                     <Button type='submit' style={{
                         width: '100%',

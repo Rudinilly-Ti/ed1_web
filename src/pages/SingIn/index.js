@@ -1,4 +1,5 @@
 import React, { useCallback, useContext } from 'react';
+import api from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
@@ -23,9 +24,18 @@ function SingIn() {
                 alert("Os campos não podem estar vazios")
             } else {
                 user.email = email.value;
-                user.senha = senha.value
-                handleUser(user);
-                navigate("/mainpage")
+                user.senha = senha.value;
+
+                try {
+                    const response = await api.post('/usuarios/autenticar', user)
+
+                    handleUser(response);
+                    navigate("/mainpage")
+
+                } catch (error) {
+                    alert(error.response.data)
+                    console.log(error);
+                }
             }
 
         }, [navigate, handleUser]

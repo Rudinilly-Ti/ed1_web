@@ -30,7 +30,6 @@ export const InputGroup = styled.div`
         padding: 10px;
     }
 
-    :first-of-type {
     margin-bottom: 10px;
-    }
+    
 `;
